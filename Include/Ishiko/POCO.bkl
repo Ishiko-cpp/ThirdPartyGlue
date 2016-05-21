@@ -1,0 +1,14 @@
+setting POCO_ROOT
+{
+    help = "Path to the POCO installation";
+    default = '$(POCO)';
+}
+
+template POCO
+{
+    defines = POCO_STATIC;
+
+    includedirs += $(POCO_ROOT)/Foundation/include;
+
+    libdirs += $(POCO_ROOT)/lib64;
+}
