@@ -1,0 +1,28 @@
+setting OPENSSL_ROOT_32
+{
+    help = "Path to the 32-bit OpenSSLinstallation";
+    default = '$(OPENSSL_32)';
+}
+
+setting OPENSSL_ROOT_64
+{
+    help = "Path to the 64-bit OpenSSL installation";
+    default = '$(OPENSSL_64)';
+}
+
+template OpenSSL
+{
+    if ($(arch) == x86)
+    {
+        includedirs += $(OPENSSL_ROOT_32)/include;
+        libdirs += $(OPENSSL_ROOT_32)/lib;
+    }
+
+    if ($(arch) == x86_64)
+    {
+        includedirs += $(OPENSSL_ROOT_64)/include;
+        libdirs += $(OPENSSL_ROOT_64)/lib;
+    }
+
+    libs += libeay32 ssleay32;
+}
