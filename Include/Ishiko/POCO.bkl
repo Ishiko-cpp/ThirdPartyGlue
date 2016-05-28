@@ -9,6 +9,12 @@ template POCO
     defines = POCO_STATIC;
 
     includedirs += $(POCO_ROOT)/Foundation/include;
+    includedirs += $(POCO_ROOT)/Util/include;
+    includedirs += $(POCO_ROOT)/Crypto/include;
+    includedirs += $(POCO_ROOT)/Net/include;
+    includedirs += $(POCO_ROOT)/NetSSL_OpenSSL/include;
 
     libdirs += $(POCO_ROOT)/lib64;
+    libdirs += $(POCO_ROOT)/openssl/win64/bin/debug;
+    libs += iphlpapi;
 }

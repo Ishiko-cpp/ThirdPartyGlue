@@ -1,0 +1,28 @@
+setting POSTGRESQL_ROOT_32
+{
+    help = "Path to the 32-bit PostgreSQL installation";
+    default = '$(POSTGRESQL_32)';
+}
+
+setting POSTGRESQL_ROOT_64
+{
+    help = "Path to the 64-bit PostgreSQL installation";
+    default = '$(POSTGRESQL_64)';
+}
+
+template PostgreSQL
+{
+    if ($(arch) == x86)
+    {
+        includedirs += $(POSTGRESQL_ROOT_32)/include;
+        libdirs += $(POSTGRESQL_ROOT_32)/lib;
+    }
+
+    if ($(arch) == x86_64)
+    {
+        includedirs += $(POSTGRESQL_ROOT_64)/include;
+        libdirs += $(POSTGRESQL_ROOT_64)/lib;
+    }
+
+    libs += "libpq";
+}
