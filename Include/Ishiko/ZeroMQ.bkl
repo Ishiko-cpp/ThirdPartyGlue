@@ -1,0 +1,10 @@
+setting ZEROMQ_ROOT
+{
+    help = "Path to the ZeroMQ installation";
+    default = '$(ZEROMQ)';
+}
+
+template ZeroMQ
+{
+    includedirs += $(ZEROMQ_ROOT)/include;
+}
