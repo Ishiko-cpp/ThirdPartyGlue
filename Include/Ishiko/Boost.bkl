@@ -8,5 +8,13 @@ template Boost
 {
     includedirs += $(BOOST_ROOT);
 
-    libdirs += $(BOOST_ROOT)/stage/lib/$(arch);
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(BOOST_ROOT)/stage/lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(BOOST_ROOT)/stage/lib/$(arch);
+    }
 }
