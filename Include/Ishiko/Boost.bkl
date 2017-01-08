@@ -12,6 +12,7 @@ template Boost
     {
         libdirs += $(BOOST_ROOT)/stage/lib;
         libs += boost_system;
+        libs += boost_filesystem;
     }
 
     if ($(toolset) != gnu)
