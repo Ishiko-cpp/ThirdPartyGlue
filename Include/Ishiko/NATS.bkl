@@ -1,0 +1,21 @@
+import OpenSSL.bkl;
+
+setting CNATS_ROOT
+{
+    help = "Path to the CNATS installation";
+    default = '$(CNATS)';
+}
+
+template NATS : OpenSSL
+{
+    includedirs += $(CNATS_ROOT)/src;
+
+    if ($(toolset) == gnu)
+    {
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(CNATS_ROOT)/src/Debug;
+    }
+}
