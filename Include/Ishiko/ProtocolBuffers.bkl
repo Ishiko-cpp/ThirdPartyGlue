@@ -1,0 +1,12 @@
+setting PROTOCOLBUFFERS_ROOT
+{
+    help = "Path to the Protocol Buffers installation";
+    default = '$(PROTOCOLBUFFERS)';
+}
+
+template ProtocolBuffers
+{
+    includedirs += $(PROTOCOLBUFFERS_ROOT)/src;
+
+    libdirs += $(PROTOCOLBUFFERS_ROOT)/lib;
+}

@@ -16,6 +16,6 @@ template NATS : OpenSSL
 
     if ($(toolset) != gnu)
     {
-        libdirs += $(CNATS_ROOT)/src/Debug;
+        libdirs += $(CNATS_ROOT)/lib/$(arch);
     }
 }
