@@ -8,14 +8,15 @@ setting CNATS_ROOT
 
 template NATS : OpenSSL
 {
-    includedirs += $(CNATS_ROOT)/src;
-
     if ($(toolset) == gnu)
     {
+        includedirs += $(CNATS_ROOT)/install/include;
+        libdirs += $(CNATS_ROOT)/install/lib;
     }
 
     if ($(toolset) != gnu)
     {
+        includedirs += $(CNATS_ROOT)/src;
         libdirs += $(CNATS_ROOT)/lib/$(arch);
     }
 }
