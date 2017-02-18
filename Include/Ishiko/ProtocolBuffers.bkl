@@ -6,7 +6,15 @@ setting PROTOCOLBUFFERS_ROOT
 
 template ProtocolBuffers
 {
-    includedirs += $(PROTOCOLBUFFERS_ROOT)/src;
+    if ($(toolset) == gnu)
+    {
+        includedirs += $(PROTOCOLBUFFERS_ROOT)/include;
+        libdirs += $(PROTOCOLBUFFERS_ROOT)/lib;
+    }
 
-    libdirs += $(PROTOCOLBUFFERS_ROOT)/lib;
+    if ($(toolset) != gnu)
+    {
+        includedirs += $(PROTOCOLBUFFERS_ROOT)/src;
+        libdirs += $(PROTOCOLBUFFERS_ROOT)/lib;
+    }
 }
