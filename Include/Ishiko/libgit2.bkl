@@ -1,0 +1,13 @@
+setting LIBGIT2_ROOT
+{
+    help = "Path to the libgit2 installation";
+    default = '$(LIBGIT2)';
+}
+
+template libgit2
+{
+    includedirs += $(LIBGIT2_ROOT)/include;
+
+    libdirs += $(LIBGIT2_ROOT)/Debug;
+    libs += git2;
+}
