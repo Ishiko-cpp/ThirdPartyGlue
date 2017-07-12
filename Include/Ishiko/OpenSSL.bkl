@@ -26,6 +26,6 @@ template OpenSSL
             libdirs += $(OPENSSL_ROOT_64)/lib;
         }
 
-        libs += libeay32 ssleay32;
+        libs += libcrypto libssl;
     }
 }
