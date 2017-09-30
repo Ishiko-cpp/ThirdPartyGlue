@@ -8,6 +8,15 @@ template libgit2
 {
     includedirs += $(LIBGIT2_ROOT)/include;
 
-    libdirs += $(LIBGIT2_ROOT)/Debug;
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(LIBGIT2_ROOT);
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(LIBGIT2_ROOT)/$(arch);
+    }
+
     libs += git2;
 }
