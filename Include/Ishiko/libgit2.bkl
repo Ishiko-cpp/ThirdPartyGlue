@@ -15,7 +15,7 @@ template libgit2
 
     if ($(toolset) != gnu)
     {
-        libdirs += $(LIBGIT2_ROOT)/$(arch);
+        libdirs += $(LIBGIT2_ROOT)/$(config);
     }
 
     libs += git2;
