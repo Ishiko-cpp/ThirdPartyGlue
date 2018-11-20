@@ -18,5 +18,5 @@ template libgit2
         libdirs += $(LIBGIT2_ROOT)/$(config);
     }
 
-    libs += git2;
+    libs += git2 Winhttp Crypt32;
 }
