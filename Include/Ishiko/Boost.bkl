@@ -7,14 +7,5 @@ setting BOOST_ROOT
 template Boost
 {
     includedirs += $(BOOST_ROOT);
-
-    if ($(toolset) == gnu)
-    {
-        libdirs += $(BOOST_ROOT)/stage/lib;
-    }
-
-    if ($(toolset) != gnu)
-    {
-        libdirs += $(BOOST_ROOT)/stage/lib/$(arch);
-    }
+    libdirs += $(BOOST_ROOT)/stage/lib;
 }
