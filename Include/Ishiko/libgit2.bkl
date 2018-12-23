@@ -6,16 +6,16 @@ setting LIBGIT2_ROOT
 
 template libgit2
 {
-    includedirs += $(LIBGIT2_ROOT)/include;
-
     if ($(toolset) == gnu)
     {
+        includedirs += $(LIBGIT2_ROOT)/include;
         libdirs += $(LIBGIT2_ROOT);
     }
 
     if ($(toolset) != gnu)
     {
-        libdirs += $(LIBGIT2_ROOT)/$(config);
+        includedirs += $(LIBGIT2_ROOT)/$(arch)/include;
+        libdirs += $(LIBGIT2_ROOT)/$(arch)/$(config);
     }
 
     libs += git2 Winhttp Crypt32;
