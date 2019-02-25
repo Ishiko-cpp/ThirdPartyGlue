@@ -1,0 +1,10 @@
+setting MSTCH_ROOT
+{
+    help = "Path to the mstch installation";
+    default = '$(MSTCH)';
+}
+
+template mstch
+{
+    includedirs += $(MSTCH_ROOT)/include;
+}
