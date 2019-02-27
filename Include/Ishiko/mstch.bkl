@@ -7,4 +7,6 @@ setting MSTCH_ROOT
 template mstch
 {
     includedirs += $(MSTCH_ROOT)/include;
+    libdirs += $(MSTCH_ROOT)/src/$(config);
+    libs += mstch;
 }
