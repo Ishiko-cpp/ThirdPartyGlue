@@ -1,0 +1,22 @@
+ishikopath = envvar("ISHIKO");
+import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/wxWidgets.bkl;
+
+setting WXISHIKOAPPLICATION_ROOT
+{
+    help = "Path to the wxIshikoApplication installation";
+    default = '$(WXISHIKOAPPLICATION)';
+}
+
+template wxIshikoApplication : wxWidgets
+{
+    includedirs += $(WXISHIKOAPPLICATION_ROOT)/include;
+
+    if ($(arch) == x86)
+    {
+        libdirs += $(WXISHIKOAPPLICATION_ROOT)/lib/vc_lib;
+    }
+    if ($(arch) == x86_64)
+    {
+        libdirs += $(WXISHIKOAPPLICATION_ROOT)/lib/vc_x64_lib;
+    }
+}
