@@ -9,14 +9,13 @@ template libgit2
     if ($(toolset) == gnu)
     {
         includedirs += $(LIBGIT2_ROOT)/include;
-        libdirs += $(LIBGIT2_ROOT);
+        libdirs += $(LIBGIT2_ROOT)/lib;
     }
 
     if ($(toolset) != gnu)
     {
         includedirs += $(LIBGIT2_ROOT)/$(arch)/include;
         libdirs += $(LIBGIT2_ROOT)/$(arch)/$(config);
+        libs += git2 Winhttp Crypt32 Rpcrt4;
     }
-
-    libs += git2 Winhttp Crypt32 Rpcrt4;
 }
