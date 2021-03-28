@@ -1,0 +1,11 @@
+setting BOTAN_ROOT
+{
+    help = "Path to the Botan installation";
+    default = '$(BOTAN)';
+}
+
+template Boost
+{
+    includedirs += $(BOTAN_ROOT)/include;
+    libdirs += $(BOTAN_ROOT)/lib;
+}
