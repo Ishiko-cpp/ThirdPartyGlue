@@ -7,5 +7,8 @@ setting ZEROMQ_ROOT
 template ZeroMQ
 {
     includedirs += $(ZEROMQ_ROOT)/libzmq/include;
-    includedirs += $(ZEROMQ_ROOT)/cppzmq
+    includedirs += $(ZEROMQ_ROOT)/cppzmq;
+
+    libdirs += $(ZEROMQ_ROOT)/libzmq/bin/x64/Debug/v140/static;
+    libs += libzmq;
 }

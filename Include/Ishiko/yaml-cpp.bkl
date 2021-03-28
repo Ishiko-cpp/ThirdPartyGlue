@@ -1,0 +1,13 @@
+setting YAML_CPP_ROOT
+{
+    help = "Path to the yaml-cpp installation";
+    default = '$(YAML_CPP)';
+}
+
+template yaml-cpp
+{
+    includedirs += $(YAML_CPP_ROOT)/include;
+
+    libdirs += $(YAML_CPP_ROOT)/Debug;
+    libs += yaml-cppd;
+}

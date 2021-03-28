@@ -10,8 +10,8 @@ template NATS : OpenSSL
 {
     if ($(toolset) == gnu)
     {
-        includedirs += $(CNATS_ROOT)/install/include;
-        libdirs += $(CNATS_ROOT)/install/lib;
+        includedirs += $(CNATS_ROOT)/include;
+        libdirs += $(CNATS_ROOT)/lib;
     }
 
     if ($(toolset) != gnu)

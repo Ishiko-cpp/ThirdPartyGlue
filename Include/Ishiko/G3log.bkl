@@ -6,8 +6,19 @@ setting G3LOG_ROOT
 
 template G3log
 {
-    includedirs += $(G3LOG_ROOT)/src;
-    includedirs += $(G3LOG_ROOT)/build/include;
-    libdirs += $(G3LOG_ROOT)/build/Debug;
+    if ($(toolset) == gnu)
+    {
+        includedirs += $(G3LOG_ROOT)/src;
+        includedirs += $(G3LOG_ROOT)/include;
+        libdirs += $(G3LOG_ROOT)/build/Debug;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        includedirs += $(G3LOG_ROOT)/src;
+        includedirs += $(G3LOG_ROOT)/build/include;
+        libdirs += $(G3LOG_ROOT)/build/Debug;
+    }
+
     libs += g3logger;
 }

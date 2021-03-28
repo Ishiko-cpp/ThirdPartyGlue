@@ -1,3 +1,5 @@
+diplodocusdbpath = envvar("DIPLODOCUSDB");
+import $(diplodocusdbpath)/AppSettingsDB/Include/DiplodocusDB/AppSettingsDB.bkl;
 ishikopath = envvar("ISHIKO");
 import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/wxWidgets.bkl;
 
@@ -7,7 +9,7 @@ setting WXISHIKOAPPLICATION_ROOT
     default = '$(WXISHIKOAPPLICATION)';
 }
 
-template wxIshikoApplication : wxWidgets
+template wxIshikoApplication : AppSettingsDB, wxWidgets
 {
     includedirs += $(WXISHIKOAPPLICATION_ROOT)/include;
 
