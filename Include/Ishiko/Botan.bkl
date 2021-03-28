@@ -6,6 +6,6 @@ setting BOTAN_ROOT
 
 template Botan
 {
-    includedirs += $(BOTAN_ROOT)/include;
+    includedirs += $(BOTAN_ROOT)/include/botan-3;
     libdirs += $(BOTAN_ROOT)/lib;
 }
