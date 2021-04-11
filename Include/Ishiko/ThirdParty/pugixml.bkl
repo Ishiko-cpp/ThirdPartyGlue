@@ -1,12 +1,12 @@
-setting PUGIXML_ROOT
+setting ISHIKO_CPP_PUGIXML_ROOT
 {
     help = "Path to the pugixml installation";
-    default = '$(PUGIXML)';
+    default = '$(ISHIKO_CPP_THIRD_PARTY_PUGIXML)';
 }
 
 template pugixml
 {
     defines += PUGIXML_HEADER_ONLY;
 
-    includedirs += $(PUGIXML_ROOT)/src;
+    includedirs += $(ISHIKO_CPP_PUGIXML_ROOT)/src;
 }

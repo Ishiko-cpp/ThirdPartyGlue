@@ -1,20 +1,20 @@
-setting BOOST_ROOT
+setting ISHIKO_CPP_BOOST_ROOT
 {
     help = "Path to the Boost installation";
-    default = '$(BOOST)';
+    default = '$(ISHIKO_CPP_THIRD_PARTY_BOOST)';
 }
 
 template Boost
 {
     if ($(toolset) == gnu)
     {
-        includedirs += $(BOOST_ROOT)/include;
-        libdirs += $(BOOST_ROOT)/lib;
+        includedirs += $(ISHIKO_CPP_BOOST_ROOT)/include;
+        libdirs += $(ISHIKO_CPP_BOOST_ROOT)/lib;
     }
 
     if ($(toolset) != gnu)
     {
-        includedirs += $(BOOST_ROOT);
-        libdirs += $(BOOST_ROOT)/stage/lib;
+        includedirs += $(ISHIKO_CPP_BOOST_ROOT);
+        libdirs += $(ISHIKO_CPP_BOOST_ROOT)/stage/lib;
     }
 }
