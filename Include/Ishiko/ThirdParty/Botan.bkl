@@ -1,0 +1,12 @@
+setting ISHIKO_CPP_BOTAN_ROOT
+{
+    help = "Path to the Botan installation";
+    default = '$(ISHIKO_CPP_THIRD_PARTY_BOTAN)';
+}
+
+template Botan
+{
+    includedirs += $(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2;
+    libdirs += $(ISHIKO_CPP_BOTAN_ROOT)/lib;
+    libs += botan;
+}
