@@ -1,0 +1,11 @@
+setting ISHIKO_CPP_FMT_ROOT
+{
+    help = "Path to the fmt installation";
+    default = '$(ISHIKO_CPP_THIRD_PARTY_FMT)';
+}
+
+template fmt
+{
+    includedirs += $(ISHIKO_CPP_FMT_ROOT)/include;
+    libdirs += $(ISHIKO_CPP_FMT_ROOT)/lib;
+}
