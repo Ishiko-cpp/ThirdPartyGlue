@@ -1,0 +1,13 @@
+setting G3LOG_ROOT
+{
+    help = "Path to the G3log installation";
+    default = '$(G3LOG)';
+}
+
+template G3log
+{
+    includedirs += $(G3LOG_ROOT)/src;
+    includedirs += $(G3LOG_ROOT)/build/include;
+    libdirs += $(G3LOG_ROOT)/build/Debug;
+    libs += g3logger;
+}
