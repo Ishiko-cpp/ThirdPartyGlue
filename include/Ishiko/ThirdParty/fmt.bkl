@@ -8,4 +8,13 @@ template fmt
 {
     includedirs += $(ISHIKO_CPP_FMT_ROOT)/include;
     libdirs += $(ISHIKO_CPP_FMT_ROOT)/lib;
+
+    if ($(toolset) == gnu)
+    {
+        libs += fmt;
+    }
+    if ($(toolset) != gnu)
+    {
+        libs += fmt-d-x64;
+    }
 }
