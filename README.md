@@ -1,4 +1,4 @@
-# Ishiko/C++ - ThirdPartyGlue
+# Ishiko/C++ ThirdPartyGlue
 
 This repository contains bakefile files used to integrate 3rd party code
 into projects using Bakefile as their build system.
@@ -21,7 +21,7 @@ None.
 
 # License
 
-Copyright (c) 2016-2021 Xavier Leclercq
+Copyright (c) 2016-2022 Xavier Leclercq
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),
