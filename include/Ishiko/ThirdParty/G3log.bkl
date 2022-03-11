@@ -1,13 +1,13 @@
-setting G3LOG_ROOT
+setting ISHIKO_CPP_G3LOG_ROOT
 {
     help = "Path to the G3log installation";
-    default = '$(G3LOG)';
+    default = '$(ISHIKO_CPP_THIRD_PARTY_G3LOG)';
 }
 
 template G3log
 {
-    includedirs += $(G3LOG_ROOT)/src;
-    includedirs += $(G3LOG_ROOT)/build/include;
-    libdirs += $(G3LOG_ROOT)/build/Debug;
+    includedirs += $(ISHIKO_CPP_G3LOG_ROOT)/src;
+    includedirs += $(ISHIKO_CPP_G3LOG_ROOT)/build/include;
+    libdirs += $(ISHIKO_CPP_G3LOG_ROOT)/build/Debug;
     libs += g3logger;
 }
