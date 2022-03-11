@@ -8,5 +8,9 @@ template mstch
 {
     includedirs += $(MSTCH_ROOT)/include;
     libdirs += $(MSTCH_ROOT)/src/$(config);
-    libs += mstch;
+
+    if ($(toolset) != gnu)
+    {
+        libs += mstch;
+    }
 }
