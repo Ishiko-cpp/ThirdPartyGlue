@@ -9,11 +9,6 @@ template Botan
     includedirs += $(ISHIKO_CPP_BOTAN_ROOT)/include/botan-2;
     libdirs += $(ISHIKO_CPP_BOTAN_ROOT)/lib;
 
-    if ($(toolset) == gnu)
-    {
-        libs += botan-2;
-    }
-
     if ($(toolset) != gnu)
     {
         libs += botan crypt32;
