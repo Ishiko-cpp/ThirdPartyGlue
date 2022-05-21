@@ -16,6 +16,6 @@ template Botan
 
     if ($(toolset) != gnu)
     {
-        libs += botan;
+        libs += botan crypt32;
     }
 }
