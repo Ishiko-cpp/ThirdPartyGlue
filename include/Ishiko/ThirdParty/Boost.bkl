@@ -1,7 +1,7 @@
 setting ISHIKO_CPP_BOOST_ROOT
 {
     help = "Path to the Boost installation";
-    default = '$(ISHIKO_CPP_THIRD_PARTY_BOOST)';
+    default = '$(BOOST_ROOT)';
 }
 
 template Boost

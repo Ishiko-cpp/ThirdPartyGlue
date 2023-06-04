@@ -1,7 +1,7 @@
 setting ISHIKO_CPP_G3LOG_ROOT
 {
     help = "Path to the G3log installation";
-    default = '$(ISHIKO_CPP_THIRD_PARTY_G3LOG)';
+    default = '$(G3LOG_ROOT)';
 }
 
 template G3log
