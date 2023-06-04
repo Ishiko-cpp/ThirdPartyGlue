@@ -1,13 +1,13 @@
-setting MSTCH_ROOT
+setting ISHIKO_CPP_MSTCH_ROOT
 {
     help = "Path to the mstch installation";
-    default = '$(MSTCH)';
+    default = '$(MSTCH_ROOT)';
 }
 
 template mstch
 {
-    includedirs += $(MSTCH_ROOT)/include;
-    libdirs += $(MSTCH_ROOT)/src/$(config);
+    includedirs += $(ISHIKO_CPP_MSTCH_ROOT)/include;
+    libdirs += $(ISHIKO_CPP_MSTCH_ROOT)/src/$(config);
 
     if ($(toolset) != gnu)
     {
